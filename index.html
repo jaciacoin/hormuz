@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HORMUZ ($HRMZ) — Captain Camel. Every bag stops here.</title>
+  <meta name="description" content="HORMUZ ($HRMZ) is a Solana meme coin. Grumpy Captain Camel, self-appointed guardian of the Strait of Hormuz. Every bag stops here. Just a meme, NFA.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky: #6ecbf7;
+      --sky-deep: #3aa6e0;
+      --sea: #1670b0;
+      --sea-dark: #0b3d72;
+      --navy: #0a2340;
+      --gold: #e0b020;
+      --gold-dark: #b8860b;
+      --cream: #fff7e6;
+      --sand: #f3d7a0;
+      --camel: #e39b3c;
+      --ink: #10233f;
+      --card: rgba(10, 35, 64, 0.72);
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Nunito", "Segoe UI", Tahoma, sans-serif;
+      color: var(--cream);
+      background: var(--navy);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    header.hero {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 0 72px;
+      background:
+        linear-gradient(180deg, #8fd6fa 0%, #4bb4ea 42%, #1a73b5 58%, #0b3d72 100%);
+      text-align: center;
+      color: var(--cream);
+    }
+
+    header.hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 64px;
+      background:
+        radial-gradient(120% 80% at 50% 0%, transparent 50%, var(--navy) 51%);
+      pointer-events: none;
+    }
+
+    .banner {
+      display: block;
+      width: min(1500px, 100%);
+      height: auto;
+      margin: 0 auto 28px;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .logo {
+      width: min(320px, 70vw);
+      height: auto;
+      display: block;
+      margin: 8px auto 18px;
+      filter: drop-shadow(0 16px 22px rgba(0, 20, 40, 0.35));
+    }
+
+    h1, h2, .ticker {
+      font-family: "Luckiest Guy", "Comic Sans MS", cursive, sans-serif;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 10vw, 5.4rem);
+      color: var(--cream);
+      text-shadow: 3px 4px 0 var(--navy);
+    }
+
+    .ticker {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      color: var(--gold);
+      text-shadow: 2px 3px 0 var(--navy);
+    }
+
+    .tagline {
+      margin: 16px auto 0;
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      font-weight: 800;
+      max-width: 22em;
+    }
+
+    .contract-box {
+      margin: 28px auto 0;
+      width: min(640px, 100%);
+      background: var(--card);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(6px);
+    }
+
+    .contract-box p {
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .ca {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.95rem;
+      color: #ffe9a3;
+      word-break: break-all;
+    }
+
+    button.copy, .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--navy);
+      box-shadow: 0 4px 0 var(--gold-dark);
+    }
+
+    button.copy:hover, .btn:hover { filter: brightness(1.05); }
+    button.copy:active, .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--gold-dark); }
+    button.copy.copied { background: #b7e3a3; }
+
+    .btn.ghost, .btn.soon {
+      background: transparent;
+      color: var(--cream);
+      border: 2px solid var(--cream);
+      box-shadow: none;
+    }
+
+    .btn.soon {
+      opacity: 0.75;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    main {
+      background: var(--navy);
+      padding: 24px 0 80px;
+    }
+
+    section {
+      margin: 0 auto 28px;
+      background: rgba(255, 247, 230, 0.06);
+      border: 1px solid rgba(224, 176, 32, 0.28);
+      border-radius: 20px;
+      padding: 28px 24px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      color: var(--gold);
+      margin-bottom: 14px;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+    }
+
+    p + p { margin-top: 12px; }
+
+    .lore p { font-size: 1.05rem; }
+
+    ol.steps {
+      list-style: none;
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+    }
+
+    ol.steps li {
+      counter-increment: step;
+      background: rgba(10, 20, 40, 0.45);
+      border-radius: 14px;
+      padding: 14px 16px 14px 58px;
+      position: relative;
+    }
+
+    ol.steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .disclaimer {
+      font-size: 0.92rem;
+      color: #d9e7f5;
+    }
+
+    .disclaimer strong { color: var(--gold); }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px 40px;
+      color: #b9cce0;
+      font-size: 0.9rem;
+      background: #07182c;
+    }
+
+    @media (max-width: 700px) {
+      /* Wide 1500x500 banner is unreadable on phones; the hero logo already carries the brand. */
+      .banner { display: none; }
+      header.hero { padding-top: 36px; }
+      section { padding: 22px 16px; }
+      .contract-box { justify-content: center; text-align: center; }
+      .contract-box p { text-align: center; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img class="banner" src="banner.png" width="1500" height="500" alt="HORMUZ $HRMZ banner: Captain Camel and the line Captain Camel. Every bag stops here.">
+    <div class="wrap">
+      <img class="logo" src="logo.png" width="1000" height="1000" alt="HORMUZ logo: an angry cartoon camel in a navy captain hat, sitting on a tiny sand island, holding a blue whistle and a wooden STOP sign.">
+      <h1>HORMUZ</h1>
+      <div class="ticker">$HRMZ</div>
+      <p class="tagline">Captain Camel. Every bag stops here.</p>
+      <div class="contract-box">
+        <p>Contract: <span class="ca" id="contract">coming soon</span></p>
+        <button type="button" class="copy" id="copy-btn" data-copy="coming soon">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="lore" id="lore">
+      <h2>The strait has a new attitude</h2>
+      <p>Nobody asked him to do this.</p>
+      <p>Captain Camel paddled out to a tiny sand island in the Strait of Hormuz, put on his hat, and appointed himself guardian. In one hoof: a blue whistle. In the other: a wooden STOP sign.</p>
+      <p>Every bag that wants to pass has to stop. He will not explain why. He will not smile. He may blow the whistle anyway.</p>
+      <p>HORMUZ ($HRMZ) is a meme coin on Solana. Fair launch, no presale, no team allocation, no utility, no promises. Just a meme.</p>
+    </section>
+
+    <section id="buy">
+      <h2>How to buy</h2>
+      <ol class="steps">
+        <li>Get a Solana wallet such as Phantom and keep your seed phrase offline and private.</li>
+        <li>Buy a little SOL and send it to that wallet.</li>
+        <li>After launch, open the official Pump.fun page for HORMUZ and swap SOL for $HRMZ. The contract and link will be posted here and in the official Telegram.</li>
+      </ol>
+      <p style="margin-top:14px">This is not financial advice. Meme coins can go to zero. Only use money you can afford to lose, and double-check the contract address.</p>
+    </section>
+
+    <section id="socials">
+      <h2>Socials</h2>
+      <p style="margin-bottom:14px">Official links will land here at launch. Until then, treat anything else as fake.</p>
+      <div class="socials">
+        <!-- Replace href and remove the soon class when the X account is live. -->
+        <a class="btn soon" href="#" aria-disabled="true">X — coming soon</a>
+        <!-- Replace href and remove the soon class when the Telegram group is live. -->
+        <a class="btn soon" href="#" aria-disabled="true">Telegram — coming soon</a>
+      </div>
+    </section>
+
+    <section class="disclaimer" id="disclaimer">
+      <h2>NFA</h2>
+      <p><strong>$HRMZ is a meme, not a product, protocol, or gateway.</strong> Nothing on this page is financial, investment, or legal advice. There is no expected return, no official partnership, and no promise that the token will keep or gain value. You can lose all of the money you put in. Do your own research. Not for use where meme-coin trading is not allowed.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>HORMUZ ($HRMZ) · Just a meme · NFA</p>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("copy-btn");
+      var ca = document.getElementById("contract");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var text = (ca && ca.textContent ? ca.textContent : btn.getAttribute("data-copy") || "").trim();
+        function done() {
+          var original = "Copy";
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(function () {
+            btn.textContent = original;
+            btn.classList.remove("copied");
+          }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {
+            window.prompt("Copy the contract:", text);
+          });
+        } else {
+          window.prompt("Copy the contract:", text);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
